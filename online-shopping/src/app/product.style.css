@@ -1,0 +1,15 @@
+.Highlight{
+    background-color: lightgray;
+}
+
+.productStyle{
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin:10px;
+}
+
+.OutOfStock{
+    opacity: 0.2;
+    
+}

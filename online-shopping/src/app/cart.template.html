@@ -1,0 +1,55 @@
+<!-- <h1>{{heading}}</h1> -->
+<!-- Enter CompanyName: <input type="text"
+[(ngModel)]="txtCompany"/>
+
+<div [ngSwitch]="txtCompany">
+   <p *ngSwitchCase="'Accenture'">Accenture</p>
+   <p *ngSwitchCase="'Sapient'">Sapient</p>
+   <p *ngSwitchCase="'Micro'">Micro</p>
+   <p *ngSwitchCase="'IBM'">IBM</p>
+   <p *ngSwitchCase="'Info'">Info</p>
+   <p *ngSwitchDefault>No Companies</p>
+</div> -->
+<!-- valid
+invalid
+pristine
+dirty -->
+<h1>New Product</h1>
+
+<form (ngSubmit)="AddNewProduct(f)" #f="ngForm" ngNativeValidate>
+   <p style="color:Red" *ngIf="pName.invalid && pName.dirty">
+   The Product name is required !!</p> 
+   Name: <input type="text" required  class="form-control" #pName="ngModel" [(ngModel)]="newProduct.title" name="pName"/>
+   Price: <input type="text" required class="form-control" [(ngModel)]="newProduct.price" name="pPrice"/>
+   Quantity: <input type="text" class="form-control" [(ngModel)]="newProduct.quantity" name="pQuantity"/>
+   Rating: <input type="text" class="form-control" [(ngModel)]="newProduct.rating" name="pRating"/>
+   ImageURL: <input type="text" class="form-control" [(ngModel)]="newProduct.imageURL" name="pImage"/><br/>
+   <!-- <button type="button" class="btn btn-success" (click)="AddNewProduct()">Add Product</button> -->
+ <input type="submit" class="btn btn-success" [disabled]="f.invalid" value="Add New Product"/>
+</form>
+<br/>
+
+Enter Product Name: <input type="text" [(ngModel)]="txtProduct" />
+
+<div [ngSwitch]="txtProduct">
+   <div *ngFor="let p of productlist">
+      <product [productdetails]="p" *ngSwitchCase="p.title"></product> 
+   </div>
+   <div *ngSwitchDefault>
+      <div *ngFor="let p of productlist">
+         <product [productdetails]="p"></product>
+      </div> 
+   </div>
+   <!-- <div *ngIf="p.title==txtProduct" else elsetemplate>
+      <product [productdetails]="p"></product>
+   </div> -->
+   <!-- <ng-template #elseTemplate>
+      <b>This is the else template</b>
+   </ng-template> -->
+</div>
+<!-- <input type="button" value="Click-me" (click)="handleClick()"/> -->
+<!-- <input type="text" [(ngModel)]="heading"/> -->
+
+<!-- <div *ngFor="let p of productlist">
+   <product [productdetails]="p"></product>
+</div> -->

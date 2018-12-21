@@ -1,0 +1,16 @@
+input.ng-dirty.ng-valid{
+    background-color: lightgreen;
+}
+
+input.ng-dirty.ng-invalid{
+    border:2px solid red;
+}   
+
+
+input.ng-pristine.ng-valid{
+    background-color: lightgoldenrodyellow;
+}
+
+input.ng-pristine.ng-invalid{
+    background-color: lightpink;
+}

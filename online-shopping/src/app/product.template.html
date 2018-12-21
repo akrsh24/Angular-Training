@@ -1,0 +1,20 @@
+<div [ngClass]="{'productStyle':true,'Highlight':isHighlighted,'OutOfStock':!productdetails.quantity}">
+
+    Select the item: <input type="checkbox" [(ngModel)]="isHighlighted" [disabled]="productdetails.quantity===0" />
+
+
+    <h1>Product-name: {{productdetails.title|lowercase|uppercase}}</h1><br />
+
+    isFree?:<input type="checkbox" [(ngModel)]="isFree" />
+    <p *ngIf="isFree==true ">
+        <b>Price: {{productdetails.price|currency:'INR'}}</b>
+    </p>
+    <br/>
+    <!-- <ng-template #elseTemplate>
+        <b>This is the else template</b>
+    </ng-template> -->
+    <h2>Quantity: {{productdetails.quantity|stocks:['no.s','items']}}</h2><br />
+    <img [src]="productdetails.imageURL" height="200px" width="200px"><br />
+    <h2>Rating: {{productdetails.rating|number:'1.1-2'}}</h2><br />
+    <h2>Raw Data: {{productdetails|json}}</h2>
+</div>
